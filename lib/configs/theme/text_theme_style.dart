@@ -115,7 +115,7 @@ class AppTextStyles {
   }
 
   static TextStyle poppinsMedium({
-    Color color = AppColors.secondaryColor,
+    Color color = AppColors.primaryColor,
     double fontSize = 20,
     FontWeight fontWeight = FontWeight.bold,
     String fontFamily = 'Poppins',

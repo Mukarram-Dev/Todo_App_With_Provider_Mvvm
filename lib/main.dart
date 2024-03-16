@@ -5,6 +5,7 @@ import 'package:task_management/configs/routes/routes_name.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/view%20model/home_view_model.dart';
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
+import 'package:task_management/views/home/controller/tab_indicator_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomeViewModel()),
         ChangeNotifierProvider(create: (context) => NavPageController()),
+        ChangeNotifierProvider(create: (context) => TabIndicatorController()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
