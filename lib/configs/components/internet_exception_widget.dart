@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:task_management/res/theme/colors.dart';
+import 'package:task_management/configs/theme/colors.dart';
 
 class InterNetExceptionWidget extends StatefulWidget {
   final VoidCallback onPress;
@@ -28,11 +27,11 @@ class _InterNetExceptionWidgetState extends State<InterNetExceptionWidget> {
             color: Colors.red,
             size: 50,
           ),
-          Padding(
-            padding: const EdgeInsets.only(top: 30),
+          const Padding(
+            padding: EdgeInsets.only(top: 30),
             child: Center(
                 child: Text(
-              'internet_exception'.tr,
+              'Internet Exception',
               textAlign: TextAlign.center,
             )),
           ),

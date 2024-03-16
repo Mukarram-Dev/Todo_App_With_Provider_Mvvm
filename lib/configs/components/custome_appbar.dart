@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:get/get.dart';
-
 class CustomAppBar extends StatefulWidget {
   final String title;
   const CustomAppBar({super.key, required this.title});
@@ -14,7 +12,6 @@ class _CustomAppBarState extends State<CustomAppBar> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: Get.height * 0.15,
         decoration: BoxDecoration(
           boxShadow: [
             BoxShadow(
@@ -43,7 +40,7 @@ class _CustomAppBarState extends State<CustomAppBar> {
               ),
               leading: IconButton(
                 onPressed: () {
-                  Get.back();
+                  // Get.back();
                 },
                 icon: const Icon(
                   Icons.arrow_back_ios,

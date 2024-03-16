@@ -1,4 +1,4 @@
-import 'package:task_management/res/theme/colors.dart';
+import 'package:task_management/configs/theme/colors.dart';
 
 import 'package:flutter/material.dart';
 

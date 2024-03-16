@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:task_management/res/assets/image_assets.dart';
-import 'package:task_management/res/routes/routes_name.dart';
+import 'package:task_management/configs/assets/image_assets.dart';
+import 'package:task_management/configs/routes/routes_name.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -11,7 +10,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  RxBool animate = false.obs;
+  final ValueNotifier<bool> animate = ValueNotifier<bool>(false);
 
   @override
   void initState() {
@@ -23,7 +22,8 @@ class _SplashScreenState extends State<SplashScreen> {
     await Future.delayed(const Duration(milliseconds: 500));
     animate.value = true;
     await Future.delayed(const Duration(milliseconds: 5000));
-    Get.offNamed(RouteName.bottomNavRoute);
+    Navigator.pushNamedAndRemoveUntil(
+        context, RouteName.bottomNavRoute, (route) => false);
   }
 
   @override
@@ -32,17 +32,15 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.white,
       body: Stack(
         children: [
-          Obx(
-            () => AnimatedPositioned(
+          AnimatedPositioned(
+            duration: const Duration(milliseconds: 1600),
+            top: animate.value ? 200 : -80,
+            left: animate.value ? 0 : -10,
+            right: 20,
+            child: AnimatedOpacity(
               duration: const Duration(milliseconds: 1600),
-              top: animate.value ? 200 : -80,
-              left: animate.value ? 0 : -10,
-              right: 20,
-              child: AnimatedOpacity(
-                duration: const Duration(milliseconds: 1600),
-                opacity: animate.value ? 1 : 0,
-                child: const Image(image: AssetImage(ImageAssets.appLogo)),
-              ),
+              opacity: animate.value ? 1 : 0,
+              child: const Image(image: AssetImage(ImageAssets.appLogo)),
             ),
           ),
         ],

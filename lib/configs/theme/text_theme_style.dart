@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:task_management/res/theme/colors.dart';
+import 'package:task_management/configs/theme/colors.dart';
 
 class AppTextStyles {
   static TextStyle interBody({

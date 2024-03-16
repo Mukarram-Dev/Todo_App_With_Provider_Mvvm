@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:task_management/res/theme/colors.dart';
-import 'package:task_management/res/theme/text_theme_style.dart';
+import 'package:task_management/configs/theme/colors.dart';
+import 'package:task_management/configs/theme/text_theme_style.dart';
 
 class CustomDialogWidget {
   static Future<void> dialogLoading(
@@ -36,22 +35,19 @@ class CustomDialogWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          surfaceTintColor:
-              Get.isDarkMode ? AppColors.blackLight : AppColors.hintText,
+          surfaceTintColor: AppColors.hintText,
           title: Text(
             title,
             textAlign: TextAlign.left,
-            style: TextStyle(
-              color:
-                  Get.isDarkMode ? AppColors.hintText : AppColors.primaryColor,
+            style: const TextStyle(
+              color: AppColors.primaryColor,
               fontFamily: 'Inter',
               fontSize: 20,
             ),
           ),
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-          backgroundColor:
-              Get.isDarkMode ? AppColors.blackLight : AppColors.hintText,
+          backgroundColor: AppColors.hintText,
           content: Text(
             message,
             style: const TextStyle(
@@ -64,8 +60,7 @@ class CustomDialogWidget {
                 Expanded(
                   child: TextButton(
                     style: ElevatedButton.styleFrom(
-                      backgroundColor:
-                          Get.isDarkMode ? Colors.red : AppColors.primaryColor,
+                      backgroundColor: AppColors.primaryColor,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),

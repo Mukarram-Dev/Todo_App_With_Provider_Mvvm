@@ -2,8 +2,6 @@ import 'package:another_flushbar/flushbar.dart';
 import 'package:another_flushbar/flushbar_route.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:get/get.dart';
-import 'package:task_management/res/theme/colors.dart';
 
 class Utils {
   static void fieldFocusChange(
@@ -28,27 +26,27 @@ class Utils {
     );
   }
 
-  static snackbarMsg(String msg, String title) {
-    Get.snackbar(
-      title,
-      msg,
-      colorText: AppColors.white,
-      borderRadius: 20,
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      boxShadows: [
-        BoxShadow(
-          color: Colors.grey.withOpacity(0.4),
-          spreadRadius: 1,
-          blurRadius: 10,
-          offset: const Offset(0, 3),
-        )
-      ],
-      backgroundColor: AppColors.primaryColor,
-      snackPosition: SnackPosition.BOTTOM,
-      duration: const Duration(seconds: 3),
-    );
-  }
+  // static snackbarMsg(String msg, String title) {
+  //   Get.snackbar(
+  //     title,
+  //     msg,
+  //     colorText: AppColors.white,
+  //     borderRadius: 20,
+  //     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+  //     margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+  //     boxShadows: [
+  //       BoxShadow(
+  //         color: Colors.grey.withOpacity(0.4),
+  //         spreadRadius: 1,
+  //         blurRadius: 10,
+  //         offset: const Offset(0, 3),
+  //       )
+  //     ],
+  //     backgroundColor: AppColors.primaryColor,
+  //     snackPosition: SnackPosition.BOTTOM,
+  //     duration: const Duration(seconds: 3),
+  //   );
+  // }
 
   static void flushBarErrorMessage(String message, BuildContext context) {
     showFlushbar(

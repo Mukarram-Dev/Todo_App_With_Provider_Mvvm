@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/res/theme/colors.dart';
-import 'package:task_management/res/theme/text_theme_style.dart';
+import 'package:task_management/configs/theme/colors.dart';
+import 'package:task_management/configs/theme/text_theme_style.dart';
 
 class CustomButtonWidget extends StatelessWidget {
   const CustomButtonWidget(

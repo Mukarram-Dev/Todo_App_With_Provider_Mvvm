@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:task_management/res/theme/colors.dart';
+import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/utils/dimensions.dart';
 
 class PagerDot extends StatelessWidget {

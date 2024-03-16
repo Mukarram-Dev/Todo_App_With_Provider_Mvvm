@@ -1,9 +1,10 @@
-import 'package:get/state_manager.dart';
+import 'package:flutter/material.dart';
 
-class NavPageController extends GetxController {
-  var tabIndex = 0.obs;
+class NavPageController with ChangeNotifier {
+  final tabIndex = ValueNotifier<int>(0);
 
   void changeTabIndex(int index) {
     tabIndex.value = index;
+    notifyListeners();
   }
 }

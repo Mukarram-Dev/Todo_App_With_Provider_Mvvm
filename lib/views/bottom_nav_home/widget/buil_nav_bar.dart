@@ -1,73 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
-import 'package:task_management/res/assets/image_assets.dart';
-import 'package:task_management/res/theme/colors.dart';
+import 'package:provider/provider.dart';
+import 'package:task_management/configs/assets/image_assets.dart';
+import 'package:task_management/configs/theme/colors.dart';
+import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
 
-buildBottomNavigationMenu(context, landingPageController) {
-  final TextStyle unselectedLabelStyle = TextStyle(
-      color: Colors.white.withOpacity(0.5),
-      fontWeight: FontWeight.w500,
-      fontSize: 12);
-
-  const TextStyle selectedLabelStyle =
-      TextStyle(color: Colors.white, fontWeight: FontWeight.w500, fontSize: 12);
-
-  return Obx(() => Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
-        child: ClipRRect(
-          borderRadius: BorderRadius.circular(20),
-          child: BottomNavigationBar(
-            showUnselectedLabels: true,
-            showSelectedLabels: true,
-            onTap: landingPageController.changeTabIndex,
-            currentIndex: landingPageController.tabIndex.value,
-            backgroundColor: AppColors.bottombarColor,
-            unselectedItemColor: AppColors.textColor,
-            selectedItemColor: AppColors.white,
-            unselectedLabelStyle: unselectedLabelStyle,
-            selectedLabelStyle: selectedLabelStyle,
-            items: [
-              buildNavItem(ImageAssets.homeIcon, ImageAssets.homeIcon, 'Home'),
-              buildNavItem(ImageAssets.unfilledHeart, ImageAssets.unfilledHeart,
-                  'Favourite'),
-              buildNavItem(
-                  ImageAssets.savedIcon, ImageAssets.unsavedIcon, 'Saved'),
-            ],
-          ),
+buildBottomNavigationMenu(context) {
+  return Consumer<NavPageController>(
+    builder: (context, provider, child) => Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(25),
+        child: BottomNavigationBar(
+          showUnselectedLabels: false,
+          showSelectedLabels: false,
+          onTap: provider.changeTabIndex,
+          currentIndex: provider.tabIndex.value,
+          backgroundColor: AppColors.primaryColor,
+          unselectedItemColor: AppColors.textColor,
+          selectedItemColor: AppColors.white,
+          items: [
+            buildNavItem(ImageAssets.homeFilled, ImageAssets.homeIcon),
+            buildNavItem(ImageAssets.calenderIcon, ImageAssets.calenderIcon),
+            buildNavItem(ImageAssets.addTaskIcon, ImageAssets.nonFilledAddIcon),
+          ],
         ),
-      ));
+      ),
+    ),
+  );
 }
 
 BottomNavigationBarItem buildNavItem(
   String activeIcon,
   String inactiveIcon,
-  String label,
 ) {
   return BottomNavigationBarItem(
-    activeIcon: Container(
-      padding: const EdgeInsets.only(bottom: 7, top: 5),
-      child: SvgPicture.asset(
-        activeIcon,
-        height: 30,
-        width: 30,
-        colorFilter: const ColorFilter.mode(
-          AppColors.white,
-          BlendMode.srcIn,
-        ),
+    label: '',
+    activeIcon: SvgPicture.asset(
+      activeIcon,
+      height: 30,
+      width: 30,
+      colorFilter: const ColorFilter.mode(
+        AppColors.white,
+        BlendMode.srcIn,
       ),
     ),
-    icon: Container(
-        padding: const EdgeInsets.only(bottom: 7, top: 5),
-        child: SvgPicture.asset(
-          inactiveIcon,
-          height: 30,
-          width: 30,
-          colorFilter: const ColorFilter.mode(
-            AppColors.primaryColor,
-            BlendMode.srcIn,
-          ),
-        )),
-    label: label,
+    icon: SvgPicture.asset(
+      inactiveIcon,
+      height: 30,
+      width: 30,
+      colorFilter: const ColorFilter.mode(
+        AppColors.textColor,
+        BlendMode.srcIn,
+      ),
+    ),
   );
 }
