@@ -33,11 +33,12 @@ class HomeView extends StatelessWidget {
               ListView.separated(
                 separatorBuilder: (context, index) => Gaps.verticalGapOf(10),
                 shrinkWrap: true,
+                primary: false,
                 itemCount: AppConstants.taskList.length,
                 itemBuilder: (context, index) => TaskListWidget(
                   index: index,
                 ),
-              )
+              ),
             ],
           ),
         ),

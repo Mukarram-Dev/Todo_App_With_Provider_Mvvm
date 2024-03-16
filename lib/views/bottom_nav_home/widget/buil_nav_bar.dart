@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:provider/provider.dart';
 import 'package:task_management/configs/assets/image_assets.dart';
+import 'package:task_management/configs/routes/routes_name.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
 
@@ -14,7 +15,13 @@ buildBottomNavigationMenu(context) {
         child: BottomNavigationBar(
           showUnselectedLabels: false,
           showSelectedLabels: false,
-          onTap: provider.changeTabIndex,
+          onTap: (index) {
+            if (index == 2) {
+              Navigator.pushNamed(context, RouteName.addTaskRoute);
+            } else {
+              provider.changeTabIndex(index);
+            }
+          },
           currentIndex: provider.tabIndex.value,
           backgroundColor: AppColors.primaryColor,
           unselectedItemColor: AppColors.textColor,
@@ -22,7 +29,7 @@ buildBottomNavigationMenu(context) {
           items: [
             buildNavItem(ImageAssets.homeFilled, ImageAssets.homeIcon),
             buildNavItem(ImageAssets.calenderIcon, ImageAssets.calenderIcon),
-            buildNavItem(ImageAssets.addTaskIcon, ImageAssets.nonFilledAddIcon),
+            buildNavItem(ImageAssets.addTaskIcon, ImageAssets.addTaskIcon),
           ],
         ),
       ),

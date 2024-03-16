@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:task_management/model/task_model.dart';
 
 class AppConstants {
@@ -18,5 +20,12 @@ class AppConstants {
     TaskModel('FIntexh App', '#UI Design', 'ASAP', 'SEP 17 - 19'),
     TaskModel('Brand Guide', '#graphic Design', 'MEDIUM', 'SEP 18 - 20'),
     TaskModel('Kickoff meeting', '#project managment', 'Low', 'SEP 21'),
+    TaskModel('Kickoff meeting', '#project managment', 'Low', 'SEP 21'),
+  ];
+
+  static List<Color> listOfColors = [
+    const Color(0xffc8fdc7),
+    const Color(0xfffaf398),
+    const Color(0xffdddefd),
   ];
 }

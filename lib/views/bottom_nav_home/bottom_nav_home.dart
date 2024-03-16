@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:task_management/views/add_task/add_task_view.dart';
+
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
 import 'package:task_management/views/bottom_nav_home/widget/buil_nav_bar.dart';
 import 'package:task_management/views/calender/calender_view.dart';
@@ -11,7 +11,10 @@ class BottomNavHome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const navScreens = [HomeView(), CalenderView(), AddTaskView()];
+    var navScreens = [
+      const HomeView(),
+      const CalenderView(),
+    ];
 
     return SafeArea(
       child: Scaffold(
