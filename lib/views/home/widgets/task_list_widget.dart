@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
@@ -15,8 +13,7 @@ class TaskListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppConstants
-            .listOfColors[Random().nextInt(AppConstants.listOfColors.length)],
+        color: AppConstants.listOfColors[index],
         borderRadius: BorderRadius.circular(20),
       ),
       child: Padding(

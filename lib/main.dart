@@ -4,6 +4,9 @@ import 'package:task_management/configs/routes/routes.dart';
 import 'package:task_management/configs/routes/routes_name.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/view%20model/home_view_model.dart';
+import 'package:task_management/views/add_task/notifiers/description_notifier.dart';
+import 'package:task_management/views/add_task/notifiers/select_user_notifier.dart';
+import 'package:task_management/views/add_task/notifiers/selected_priority.dart';
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
 import 'package:task_management/views/home/controller/tab_indicator_controller.dart';
 
@@ -22,6 +25,9 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => HomeViewModel()),
         ChangeNotifierProvider(create: (context) => NavPageController()),
         ChangeNotifierProvider(create: (context) => TabIndicatorController()),
+        ChangeNotifierProvider(create: (context) => SelectedPriority()),
+        ChangeNotifierProvider(create: (context) => SelectUserNotifier()),
+        ChangeNotifierProvider(create: (context) => DescriptionNotifier()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
