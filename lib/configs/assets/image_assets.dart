@@ -16,4 +16,8 @@ class ImageAssets {
   static const String calenderIcon = 'assets/svg/calender.svg';
   static const String addTaskIcon = 'assets/svg/add_task.svg';
   static const String nonFilledAddIcon = 'assets/svg/non_filled_add.svg';
+
+  static const String pager1 = 'assets/svg/pager_1.svg';
+  static const String pager2 = 'assets/svg/pager_2.svg';
+  static const String pager3 = 'assets/svg/pager_3.svg';
 }

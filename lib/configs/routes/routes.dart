@@ -4,14 +4,14 @@ import 'package:task_management/views/add_task/add_task_view.dart';
 import 'package:task_management/views/bottom_nav_home/bottom_nav_home.dart';
 import 'package:task_management/views/calender/calender_view.dart';
 import 'package:task_management/views/home/home_view.dart';
-import 'package:task_management/views/splash/splash_screen.dart';
+import 'package:task_management/views/introduction/intro_screen.dart';
 
 class AppRoutes {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
-      case RouteName.splashRoute:
+      case RouteName.introRoute:
         return MaterialPageRoute(
-            builder: (BuildContext context) => const SplashScreen());
+            builder: (BuildContext context) => const IntroScreen());
 
       case RouteName.bottomNavRoute:
         return MaterialPageRoute(

@@ -25,7 +25,7 @@ class AppBarCalender extends StatelessWidget {
                   offset: const Offset(0, 3),
                   color: AppColors.textColor.withOpacity(0.4))
             ]),
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+        padding: const EdgeInsets.symmetric(horizontal: 10),
         child: Padding(
           padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
           child: Column(

@@ -1,5 +1,6 @@
 import 'dart:ui';
 
+import 'package:task_management/configs/assets/image_assets.dart';
 import 'package:task_management/model/task_model.dart';
 import 'package:task_management/model/user_model.dart';
 
@@ -18,9 +19,26 @@ class AppConstants {
   ];
 
   static List<TaskModel> taskList = [
-    TaskModel('FIntexh App', '#UI Design', 'ASAP', 'SEP 17 - 19'),
-    TaskModel('Brand Guide', '#graphic Design', 'MEDIUM', 'SEP 18 - 20'),
-    TaskModel('Kickoff meeting', '#project managment', 'Low', 'SEP 21'),
+    TaskModel(
+        'FIntexh App', '#UI Design', 'ASAP', 'SEP 17 - 19', '11:00am', '30min'),
+    TaskModel('Brand Guide', '#graphic Design', 'MEDIUM', 'SEP 18 - 20',
+        '12:00am', '3 hrs'),
+    TaskModel(
+      'Kickoff meeting',
+      '#project managment',
+      'Low',
+      'SEP 21',
+      '5:00pm',
+      '1 hrs',
+    ),
+    TaskModel(
+      'Logo Design',
+      '#Fintech App',
+      'Low',
+      'SEP 21',
+      '7:00pm',
+      '2 hrs',
+    ),
   ];
 
   static List<UserModel> userList = [
@@ -45,7 +63,14 @@ class AppConstants {
     const Color(0xffc8fdc7),
     const Color(0xfffcfae5),
     const Color(0xffdddefd),
+    const Color(0xffc8fdc7),
   ];
 
   static const List<String> listOfPririoty = ['Low', 'High', 'Asap', 'Medium'];
+
+  static List<Map<String, String>> onBoardPagerData = [
+    {"text": 'Focus on the work that matters', "image": ImageAssets.pager1},
+    {"text": 'Stay organized and effiecient', "image": ImageAssets.pager2},
+    {"text": 'Plan, manage and track tasks', "image": ImageAssets.pager3}
+  ];
 }

@@ -56,6 +56,7 @@ class BottomSheetDescription extends StatelessWidget {
               Gaps.verticalGapOf(20),
               Consumer<DescriptionNotifier>(
                 builder: (context, provider, child) => CustomButtonWidget(
+                    height: 60,
                     width: double.infinity,
                     title: 'Add Description',
                     onPress: () {

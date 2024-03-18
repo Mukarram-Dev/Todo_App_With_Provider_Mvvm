@@ -6,6 +6,7 @@ import 'package:task_management/views/add_task/widgets/description_widget.dart';
 import 'package:task_management/views/add_task/widgets/textfield_taskname.dart';
 import 'package:task_management/views/add_task/widgets/timeline_widget.dart';
 import 'package:task_management/views/add_task/widgets/top_bar_widget.dart';
+import 'package:animate_do/animate_do.dart';
 
 class AddTaskView extends StatelessWidget {
   const AddTaskView({super.key});
@@ -31,21 +32,23 @@ class AddTaskView extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TopAppBarWidget(),
-            Gaps.verticalGapOf(20),
-            const TaskNameField(),
-            Gaps.verticalGapOf(30),
-            const AssignedWidget(),
-            Gaps.verticalGapOf(20),
-            const TimelineWidget(),
-            Gaps.verticalGapOf(20),
-            const DescriptionWidget(),
-            Gaps.verticalGapOf(50),
-          ],
+        child: FadeIn(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const TopAppBarWidget(),
+              Gaps.verticalGapOf(20),
+              const TaskNameField(),
+              Gaps.verticalGapOf(30),
+              const AssignedWidget(),
+              Gaps.verticalGapOf(20),
+              const TimelineWidget(),
+              Gaps.verticalGapOf(20),
+              const DescriptionWidget(),
+              Gaps.verticalGapOf(50),
+            ],
+          ),
         ),
       ),
     );

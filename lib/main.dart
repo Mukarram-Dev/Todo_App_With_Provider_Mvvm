@@ -9,6 +9,7 @@ import 'package:task_management/views/add_task/notifiers/select_user_notifier.da
 import 'package:task_management/views/add_task/notifiers/selected_priority.dart';
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
 import 'package:task_management/views/home/controller/tab_indicator_controller.dart';
+import 'package:task_management/views/introduction/controller/intro_controller.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (context) => SelectedPriority()),
         ChangeNotifierProvider(create: (context) => SelectUserNotifier()),
         ChangeNotifierProvider(create: (context) => DescriptionNotifier()),
+        ChangeNotifierProvider(create: (context) => IntroNotifier()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -36,7 +38,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         ),
         // this is the initial route indicating from where our app will start
-        initialRoute: RouteName.splashRoute,
+        initialRoute: RouteName.introRoute,
         onGenerateRoute: AppRoutes.generateRoute,
       ),
     );

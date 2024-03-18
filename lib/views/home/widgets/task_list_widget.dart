@@ -64,7 +64,7 @@ class TaskListWidget extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    const Icon(Icons.task_alt),
+                    const Icon(Icons.expand_circle_down),
                     Gaps.horizontalGapOf(10),
                     Text(
                       AppConstants.taskList[index].taskDate,
