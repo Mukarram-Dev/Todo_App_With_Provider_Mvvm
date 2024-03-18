@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
 import 'package:task_management/utils/gaps.dart';
+import 'package:task_management/views/add_task/bottom%20sheets/bottomsheet_description.dart';
 import 'package:task_management/views/add_task/notifiers/description_notifier.dart';
-import 'package:task_management/views/add_task/widgets/bottomsheet_description.dart';
 
 class DescriptionWidget extends StatelessWidget {
   const DescriptionWidget({super.key});
@@ -50,7 +50,7 @@ class DescriptionWidget extends StatelessWidget {
             builder: (context, provider, child) => Text(
               provider.description.value,
               maxLines: 3,
-              style: AppTextStyles.interBody(color: AppColors.primaryColor),
+              style: AppTextStyles.interBody(color: AppColors.textColor),
             ),
           )
         ],

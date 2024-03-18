@@ -4,11 +4,11 @@ import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
 import 'package:task_management/utils/dimensions.dart';
 import 'package:task_management/utils/gaps.dart';
+import 'package:task_management/views/add_task/bottom%20sheets/bottomsheet_prerioty.dart';
 import 'package:task_management/views/add_task/notifiers/selected_priority.dart';
-import 'package:task_management/views/add_task/widgets/bottomsheet_prerioty.dart';
 
-class TopBarWidget extends StatelessWidget {
-  const TopBarWidget({super.key});
+class TopAppBarWidget extends StatelessWidget {
+  const TopAppBarWidget({super.key});
 
   @override
   Widget build(BuildContext context) {

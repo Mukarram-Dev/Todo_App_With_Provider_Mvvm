@@ -3,8 +3,8 @@ import 'package:provider/provider.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
 import 'package:task_management/utils/gaps.dart';
+import 'package:task_management/views/add_task/bottom%20sheets/bottomsheet_assigned.dart';
 import 'package:task_management/views/add_task/notifiers/select_user_notifier.dart';
-import 'package:task_management/views/add_task/widgets/bottomsheet_assigned.dart';
 
 class AssignedWidget extends StatelessWidget {
   const AssignedWidget({super.key});

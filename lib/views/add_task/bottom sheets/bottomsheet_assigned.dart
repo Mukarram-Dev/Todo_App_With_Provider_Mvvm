@@ -4,7 +4,6 @@ import 'package:task_management/configs/components/custom_text_field.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
 import 'package:task_management/utils/app_constants.dart';
-import 'package:task_management/utils/dimensions.dart';
 import 'package:task_management/utils/gaps.dart';
 import 'package:task_management/views/add_task/notifiers/select_user_notifier.dart';
 
@@ -21,7 +20,7 @@ class BottomSheetAssigned extends StatelessWidget {
             topRight: Radius.circular(40),
           )),
       child: Padding(
-        padding: const EdgeInsets.all(Dimensions.paddingSizeDefault),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -62,6 +61,7 @@ class BottomSheetAssigned extends StatelessWidget {
                           Navigator.pop(context);
                         },
                         child: ListTile(
+                          contentPadding: const EdgeInsets.all(0),
                           minLeadingWidth: 0,
                           leading: CircleAvatar(
                             backgroundColor: AppColors.appBarColor,

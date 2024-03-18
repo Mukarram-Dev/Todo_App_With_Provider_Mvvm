@@ -35,7 +35,7 @@ class AddTaskView extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const TopBarWidget(),
+            const TopAppBarWidget(),
             Gaps.verticalGapOf(20),
             const TaskNameField(),
             Gaps.verticalGapOf(30),
