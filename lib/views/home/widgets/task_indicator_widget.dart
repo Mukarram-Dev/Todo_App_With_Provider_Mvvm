@@ -3,14 +3,14 @@ import 'package:provider/provider.dart';
 import 'package:task_management/configs/theme/colors.dart';
 import 'package:task_management/configs/theme/text_theme_style.dart';
 import 'package:task_management/utils/app_constants.dart';
-import 'package:task_management/views/home/controller/tab_indicator_controller.dart';
+import 'package:task_management/views/home/controller/task_list_notifier.dart';
 
 class TaskIndicatorWidget extends StatelessWidget {
   const TaskIndicatorWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<TabIndicatorController>(
+    return Consumer<TaskListNotifier>(
         builder: (context, value, child) => Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: List.generate(AppConstants.listOfTabIndicator.length,
@@ -21,10 +21,13 @@ class TaskIndicatorWidget extends StatelessWidget {
 
 Widget textContainer(
   int index,
-  TabIndicatorController value,
+  TaskListNotifier value,
 ) {
   return InkWell(
-    onTap: () => value.changeTabIndex(index),
+    onTap: () {
+      value.changeTabIndex(index);
+      value.selectedStatus.value = AppConstants.listOfTabIndicator[index];
+    },
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       decoration: BoxDecoration(

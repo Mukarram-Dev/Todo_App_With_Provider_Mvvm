@@ -8,7 +8,7 @@ import 'package:task_management/views/add_task/notifiers/description_notifier.da
 import 'package:task_management/views/add_task/notifiers/select_user_notifier.dart';
 import 'package:task_management/views/add_task/notifiers/selected_priority.dart';
 import 'package:task_management/views/bottom_nav_home/nav_controller/nav_controller.dart';
-import 'package:task_management/views/home/controller/tab_indicator_controller.dart';
+import 'package:task_management/views/home/controller/task_list_notifier.dart';
 import 'package:task_management/views/introduction/controller/intro_controller.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       providers: [
         ChangeNotifierProvider(create: (context) => HomeViewModel()),
         ChangeNotifierProvider(create: (context) => NavPageController()),
-        ChangeNotifierProvider(create: (context) => TabIndicatorController()),
+        ChangeNotifierProvider(create: (context) => TaskListNotifier()),
         ChangeNotifierProvider(create: (context) => SelectedPriority()),
         ChangeNotifierProvider(create: (context) => SelectUserNotifier()),
         ChangeNotifierProvider(create: (context) => DescriptionNotifier()),
