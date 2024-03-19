@@ -19,14 +19,14 @@ class AppConstants {
   ];
 
   static List<TaskModel> taskList = [
-    TaskModel('FIntexh App', '#UI Design', 'ASAP', 'SEP 17 - 19', '11:00am',
+    TaskModel(1, 'FIntexh App', '#UI Design', 'ASAP', 'SEP 17 - 19', '11:00am',
         '30min', 'TO DO'),
-    TaskModel('Brand Guide', '#graphic Design', 'MEDIUM', 'SEP 18 - 20',
-        '12:00am', '3 hrs', 'IN PROGRESS'),
-    TaskModel('Kickoff meeting', '#project managment', 'Low', 'SEP 21',
+    TaskModel(2, 'Brand Guide', '#graphic Design', 'MEDIUM', 'SEP 18 - 20',
+        '12:00am', '3 hrs', 'TO DO'),
+    TaskModel(3, 'Kickoff meeting', '#project managment', 'Low', 'SEP 21',
         '5:00pm', '1 hrs', 'TO DO'),
-    TaskModel('Logo Design', '#Fintech App', 'Low', 'SEP 21', '7:00pm', '2 hrs',
-        'Done'),
+    TaskModel(4, 'Logo Design', '#Fintech App', 'Low', 'SEP 21', '7:00pm',
+        '2 hrs', 'TO DO'),
   ];
 
   static List<UserModel> userList = [

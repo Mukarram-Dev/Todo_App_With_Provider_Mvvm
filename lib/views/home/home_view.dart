@@ -39,10 +39,10 @@ class HomeView extends StatelessWidget {
                         Gaps.verticalGapOf(10),
                     shrinkWrap: true,
                     primary: false,
-                    itemCount: value.filterdList.isEmpty
+                    itemCount: value.filteredList.isEmpty
                         ? 1
-                        : value.filterdList.length,
-                    itemBuilder: (context, index) => value.filterdList.isEmpty
+                        : value.filteredList.length,
+                    itemBuilder: (context, index) => value.filteredList.isEmpty
                         ? Center(
                             child: Text(
                               'No Task Added',
@@ -52,6 +52,7 @@ class HomeView extends StatelessWidget {
                           )
                         : TaskListWidget(
                             index: index,
+                            taskModel: value.filteredList[index],
                           ),
                   ),
                 ),

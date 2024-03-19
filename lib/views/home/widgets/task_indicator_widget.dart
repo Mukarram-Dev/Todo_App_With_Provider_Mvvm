@@ -26,22 +26,22 @@ Widget textContainer(
   return InkWell(
     onTap: () {
       value.changeTabIndex(index);
-      value.selectedStatus.value = AppConstants.listOfTabIndicator[index];
+      value.setSelectedStatus(AppConstants.listOfTabIndicator[index]);
     },
     child: Container(
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
       decoration: BoxDecoration(
-        color: value.currentIndex.value == index
+        color: value.currentIndex == index
             ? AppColors.primaryColor
             : AppColors.white,
-        border: value.currentIndex.value != index ? Border.all() : null,
+        border: value.currentIndex != index ? Border.all() : null,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Center(
         child: Text(
           AppConstants.listOfTabIndicator[index],
           style: AppTextStyles.interBody(
-              color: value.currentIndex.value == index
+              color: value.currentIndex == index
                   ? AppColors.white
                   : AppColors.primaryColor,
               fontWeight: FontWeight.bold),

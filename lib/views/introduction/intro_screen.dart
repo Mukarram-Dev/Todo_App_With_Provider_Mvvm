@@ -63,7 +63,7 @@ class IntroScreen extends StatelessWidget {
                         child: Column(
                           children: [
                             const PagerButtons(),
-                            Gaps.verticalGapOf(30),
+                            Gaps.verticalGapOf(20),
                             InkWell(
                               onTap: () => Navigator.pushReplacementNamed(
                                   context, RouteName.bottomNavRoute),

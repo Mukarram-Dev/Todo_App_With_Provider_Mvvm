@@ -1,4 +1,5 @@
 class TaskModel {
+  final int taskId;
   final String taskTitle;
   final String taskType;
   final String taskPrerioty;
@@ -7,10 +8,11 @@ class TaskModel {
   final String taskDuration;
   final String taskStatus;
 
-  TaskModel(this.taskTitle, this.taskType, this.taskPrerioty, this.taskDate,
-      this.taskTime, this.taskDuration, this.taskStatus);
+  TaskModel(this.taskId, this.taskTitle, this.taskType, this.taskPrerioty,
+      this.taskDate, this.taskTime, this.taskDuration, this.taskStatus);
 
   TaskModel copyWith({
+    int? taskId,
     String? taskTitle,
     String? taskType,
     String? taskPrerioty,
@@ -20,12 +22,14 @@ class TaskModel {
     String? taskStatus,
   }) {
     return TaskModel(
-        taskTitle ?? this.taskTitle,
-        taskType ?? this.taskType,
-        taskPrerioty ?? this.taskPrerioty,
-        taskDate ?? this.taskDate,
-        taskTime ?? this.taskTime,
-        taskDuration ?? this.taskDuration,
-        taskStatus ?? this.taskStatus);
+      taskId ?? this.taskId,
+      taskTitle ?? this.taskTitle,
+      taskType ?? this.taskType,
+      taskPrerioty ?? this.taskPrerioty,
+      taskDate ?? this.taskDate,
+      taskTime ?? this.taskTime,
+      taskDuration ?? this.taskDuration,
+      taskStatus ?? this.taskStatus,
+    );
   }
 }

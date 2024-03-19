@@ -7,7 +7,6 @@ class CustomButtonWidget extends StatelessWidget {
       {super.key,
       required this.title,
       required this.onPress,
-      this.loading = false,
       this.height = 50,
       this.width = 200,
       this.textColor = AppColors.white,
@@ -15,7 +14,6 @@ class CustomButtonWidget extends StatelessWidget {
 
   final String title;
   final VoidCallback onPress;
-  final bool loading;
   final double height, width;
   final Color textColor, buttonColor;
 
@@ -24,22 +22,27 @@ class CustomButtonWidget extends StatelessWidget {
     return InkWell(
       onTap: onPress,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         height: height,
         width: width,
         decoration: BoxDecoration(
           color: buttonColor,
           borderRadius: BorderRadius.circular(20),
         ),
-        child: loading
-            ? const CircularProgressIndicator()
-            : Center(
-                child: Text(
-                  title,
-                  style: AppTextStyles.interBody(
-                      color: textColor, fontWeight: FontWeight.bold),
-                ),
-              ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              title,
+              style: AppTextStyles.poppinsMedium(
+                  color: textColor, fontWeight: FontWeight.w500),
+            ),
+            const Icon(
+              Icons.arrow_forward_ios_outlined,
+              color: AppColors.white,
+            )
+          ],
+        ),
       ),
     );
   }

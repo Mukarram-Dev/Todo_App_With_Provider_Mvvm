@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:task_management/configs/routes/routes.dart';
 import 'package:task_management/configs/routes/routes_name.dart';
 import 'package:task_management/configs/theme/colors.dart';
-import 'package:task_management/view%20model/home_view_model.dart';
 import 'package:task_management/views/add_task/notifiers/description_notifier.dart';
 import 'package:task_management/views/add_task/notifiers/select_user_notifier.dart';
 import 'package:task_management/views/add_task/notifiers/selected_priority.dart';
@@ -23,7 +22,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider(create: (context) => HomeViewModel()),
         ChangeNotifierProvider(create: (context) => NavPageController()),
         ChangeNotifierProvider(create: (context) => TaskListNotifier()),
         ChangeNotifierProvider(create: (context) => SelectedPriority()),
@@ -33,7 +31,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'TODO APP',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: AppColors.primaryColor),
         ),

@@ -2,26 +2,34 @@ import 'package:flutter/material.dart';
 import 'package:task_management/model/task_model.dart';
 import 'package:task_management/utils/app_constants.dart';
 
-class TaskListNotifier with ChangeNotifier {
-  var currentIndex = ValueNotifier<int>(0);
-  var taskList = ValueNotifier(AppConstants.taskList);
-  var selectedStatus = ValueNotifier('TO DO');
+class TaskListNotifier extends ChangeNotifier {
+  int _currentIndex = 0;
+  final List<TaskModel> _taskList = AppConstants.taskList;
+  String _selectedStatus = 'TO DO';
 
-  List<TaskModel> get filterdList => taskList.value
+  int get currentIndex => _currentIndex;
+  List<TaskModel> get taskList => _taskList;
+  String get selectedStatus => _selectedStatus;
+
+  List<TaskModel> get filteredList => _taskList
       .where((element) => element.taskStatus
           .toLowerCase()
-          .contains(selectedStatus.value.toLowerCase()))
+          .contains(_selectedStatus.toLowerCase()))
       .toList();
 
   void changeTabIndex(int index) {
-    currentIndex.value = index;
+    _currentIndex = index;
     notifyListeners();
   }
 
-  setTaskStatus(int index, String newStatus) {
-    taskList.value[index] = taskList.value[index].copyWith(
-      taskStatus: newStatus,
-    );
+  void setTaskStatus(int id, String newStatus) {
+    final index = _taskList.indexWhere((element) => element.taskId == id);
+    _taskList[index] = _taskList[index].copyWith(taskStatus: newStatus);
+    notifyListeners();
+  }
+
+  void setSelectedStatus(String status) {
+    _selectedStatus = status;
     notifyListeners();
   }
 }
